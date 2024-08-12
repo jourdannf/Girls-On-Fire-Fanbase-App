@@ -1,6 +1,8 @@
 import express from "express";
 import db from "../db/conn.mjs";
 import { ObjectId } from "mongodb";
+import mongoose from "mongoose";
+import User from "../models/user.js"
 
 
 const router = express.Router();
@@ -15,7 +17,7 @@ router
         else res.status(200).send(result);
     })
     .post(async(req, res) => {
-        const newUser = {
+        const newUser = new User({
             nickname: req.body.nickname,
             username: req.body.username,
             password: req.body.password,
@@ -24,9 +26,11 @@ router
                 contestants: [],
                 performances: []
             }
-        }
+        })
 
-        users.insertOne(newUser);
+        newUser.save();
+
+        res.send(newUser);
     })
 
 router
