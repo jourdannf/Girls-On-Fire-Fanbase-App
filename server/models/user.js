@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 
 
 
@@ -29,4 +29,4 @@ const userSchema = new mongoose.Schema({
     }
 }, {collection: "users"});
 
-export default userSchema;
+export default mongoose.model("User", userSchema);
