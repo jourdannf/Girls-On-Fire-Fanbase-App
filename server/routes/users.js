@@ -25,7 +25,8 @@ router
             favorites: {
                 contestants: [],
                 performances: []
-            }
+            },
+            profilePic: req.body.profilePic
         })
 
         newUser.save();
