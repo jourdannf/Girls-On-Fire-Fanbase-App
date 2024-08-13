@@ -8,6 +8,7 @@ import ContestantsPage from '../pages/ContestantsPage'
 import Header from '../components/header'
 
 import {Routes, Route} from 'react-router-dom';
+import PerformancesRoundPage from '../pages/PerformancesRoundPage'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/contestants" element={<ContestantsPage />}></Route>
         <Route path="/performances" element={< PerformancesPage />}></Route>
+        <Route path="/performances" element={<PerformancesRoundPage />}></Route>
       </Routes>
     </div>
   )

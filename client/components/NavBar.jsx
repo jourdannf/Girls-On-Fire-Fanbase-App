@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function NavBar (){
     return (
-        <div>
+        <div style={{display: "flex"}}>
             <Link to="/">
                 <div>Home</div>
             </Link>

@@ -1,10 +1,12 @@
 import Header from "../components/header"
+import axios from "axios"
 
-export default function HomePage (){
+export default function HomePage (props){
+
     return (
         <div>
-            <Header />
-            <h1>Home Page</h1>
+            
+            
         </div>
     )
 }
