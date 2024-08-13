@@ -1,7 +1,17 @@
+import { Link } from "react-router-dom";
+
 export default function NavBar (){
     return (
         <div>
-            <h1>This is the Header</h1>
+            <Link to="/">
+                <div>Home</div>
+            </Link>
+            <Link to="/contestants">
+                <div>Contestants</div>
+            </Link>
+            <Link to="/performances">
+                <div>Performances</div>
+            </Link>
         </div>
     );
 }

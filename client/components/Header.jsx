@@ -1,5 +1,11 @@
+import NavBar from "./NavBar";
+
 export default function Header () {
     return(
-        <div>This is the Header</div>
+        <div>
+            <img src="" alt="" />
+            <NavBar />
+            
+        </div>
     );
 }
