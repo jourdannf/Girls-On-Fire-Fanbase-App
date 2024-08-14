@@ -43,7 +43,6 @@ router
         const query = {round: rdNum}
 
         const result = await Performance.find(query);
-        console.log("Here");
 
         if (!result) res.status(404).send("Resource Not Found");
         else res.status(200).send(result);

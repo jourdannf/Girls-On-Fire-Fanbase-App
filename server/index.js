@@ -1,5 +1,6 @@
 import db from "./db/conn.mjs"
 import express from "express";
+import cors from "cors";
 
 import contestantsRouter from "./routes/contestants.js"
 import performancesRouter from "./routes/performances.js"
@@ -9,6 +10,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
+app.use(cors())
 app.use(express.json());
 
 app.use("/contestants", contestantsRouter);
