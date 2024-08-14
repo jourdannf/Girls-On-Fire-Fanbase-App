@@ -1,0 +1,55 @@
+#winners-tab {
+    top: -50px;
+}
+
+#winners-tab.hidden {
+    animation: slideup 1s forwards;
+}
+
+#winners-tab.reveal {
+    animation: slidedown 1s forwards;
+}
+
+#outer.reveal {
+    animation: expandheight 1s forwards;
+}
+
+#outer.hidden {
+    animation: shrinkheight 1s forwards;
+}
+
+@keyframes slidedown {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(50px);
+    }
+}
+
+@keyframes slideup {
+    from {
+        transform: translateY(50px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes expandheight {
+    from {
+        height: 100px;
+    }
+    to {
+        height: 150px;
+    }
+}
+
+@keyframes shrinkheight {
+    from {
+        height: 150px;
+    }
+    to {
+        height: 100px;
+    }
+}

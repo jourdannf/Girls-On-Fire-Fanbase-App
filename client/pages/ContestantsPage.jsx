@@ -2,12 +2,16 @@ import { useEffect, useState } from "react"
 import ContestantsCard from "../components/ContestantsCard"
 import getContestants from "../utils/contestants"
 import ContestantsGrid from "../components/ContestantsGrid"
+import WinnersTab from "../components/WinnersTab"
+import "../src/animation.css"
 
 export default function ContestantsPage () {
     const [winners, setWinners] = useState([]);
     const [losers, setLosers] = useState([]);
     const [filteredLosers, setFilteredLosers] = useState([]);
     const [inputValue, setInputValue] = useState("");
+    const [hidden, setHidden] = useState(true);
+    const [animate, setAnimate] = useState(false);
     
     useEffect(()=> {
         getContestants()
@@ -57,10 +61,21 @@ export default function ContestantsPage () {
         setFilteredLosers(result);
     }
 
+    function handleClick (e) {
+        if (!animate) {
+            setAnimate(!animate);
+        }
+        setHidden(!hidden);
+    }
+
     return (
         
         <>
-            <img src="" alt="Picture of winning group" />
+            <div id="outer" className= {animate ? (hidden ? "hidden" : "reveal") : ""} style={{height: "100px"}}>
+                <img src="../src/assets/react.svg" alt="Picture of winning group" style={{height: "100px", border: "blue 1px solid"}} onClick={handleClick} />
+                <WinnersTab hidden={hidden} animate={animate} />
+            </div>
+            
             <br />
             <input type="text" placeholder="Search for contestant" onChange={handleSearchInputChange} />
             <ContestantsGrid losers={filteredLosers} />
