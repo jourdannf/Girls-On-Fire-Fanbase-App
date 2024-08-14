@@ -4,7 +4,13 @@
   "type": "module",
   "main": "/server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm run dev --prefix client",
+    "server:dev": "nodemon server/index.js",
+    "server:prod": "NODE_ENV=production nodemon server/index.js",
+    "start": "concurrently \"npm run server:dev\" \"npm rn client",
+    "prod": "concurrently \"npm run server:prod\" \"npm rn client",
+    "build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +18,7 @@
   "description": "",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
