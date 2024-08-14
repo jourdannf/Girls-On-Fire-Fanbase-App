@@ -4,36 +4,39 @@ import getContestants from "../utils/contestants"
 import ContestantsGrid from "../components/ContestantsGrid"
 
 export default function ContestantsPage () {
-    // const [winners, setWinners] = useState([]);
-    // const [losers, setLosers] = useState([]);
+    const [winners, setWinners] = useState([]);
+    const [losers, setLosers] = useState([]);
+    const [filteredLosers, setFilteredLosers] = useState([]);
+    const [inputValue, setInputValue] = useState("");
     
-    // useEffect(()=> {
-    //     getContestants()
-    //         .then(contestants => {
-    //             const data = contestants.data;
-    //             const winningContestants = [];
-    //             const losingContestants = [];
-    //             data.forEach(contestant => {
-    //                 const results = contestant.results;
-    //                 const name = contestant.name;
-    //                 results.forEach(result => {
-    //                     if (result.showTitle != "Girls On Fire"){
-    //                         return;
-    //                     }
+    useEffect(()=> {
+        getContestants()
+            .then(contestants => {
+                const data = contestants.data;
+                const winningContestants = [];
+                const losingContestants = [];
+                data.forEach(contestant => {
+                    const results = contestant.results;
+                    const name = contestant.name;
+                    results.forEach(result => {
+                        if (result.showTitle != "Girls On Fire"){
+                            return;
+                        }
 
-    //                     if (result.finalEp.winner == true){
-    //                         winningContestants.push(contestant);
-    //                     }else {
-    //                         losingContestants.push(contestant);
-    //                     }
-    //                 })
-    //             });
+                        if (result.finalEp.winner == true){
+                            winningContestants.push(contestant);
+                        }else {
+                            losingContestants.push(contestant);
+                        }
+                    })
+                });
 
-    //             setWinners(winningContestants);
-    //             setLosers(losingContestants);
+                setWinners(winningContestants);
+                setLosers(losingContestants);
+                setFilteredLosers(losingContestants);
 
-    //         });
-    // },[])
+            });
+    },[])
     
     // return (
     //     <div>
@@ -45,9 +48,22 @@ export default function ContestantsPage () {
     //     </div>
     // )
 
+    function handleSearchInputChange (e){
+        const result = losers.filter(person => {
+            if (e.target.value == "") return losers;
+            return person.name.toLowerCase().includes(e.target.value.toLowerCase());
+        });
+
+        setFilteredLosers(result);
+    }
+
     return (
+        
         <>
-            <ContestantsGrid />
+            <img src="" alt="Picture of winning group" />
+            <br />
+            <input type="text" placeholder="Search for contestant" onChange={handleSearchInputChange} />
+            <ContestantsGrid losers={filteredLosers} />
         </>
     )
 }
