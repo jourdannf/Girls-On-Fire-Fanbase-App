@@ -1,7 +1,53 @@
+import { useEffect, useState } from "react"
+import ContestantsCard from "../components/ContestantsCard"
+import getContestants from "../utils/contestants"
+import ContestantsGrid from "../components/ContestantsGrid"
+
 export default function ContestantsPage () {
+    // const [winners, setWinners] = useState([]);
+    // const [losers, setLosers] = useState([]);
+    
+    // useEffect(()=> {
+    //     getContestants()
+    //         .then(contestants => {
+    //             const data = contestants.data;
+    //             const winningContestants = [];
+    //             const losingContestants = [];
+    //             data.forEach(contestant => {
+    //                 const results = contestant.results;
+    //                 const name = contestant.name;
+    //                 results.forEach(result => {
+    //                     if (result.showTitle != "Girls On Fire"){
+    //                         return;
+    //                     }
+
+    //                     if (result.finalEp.winner == true){
+    //                         winningContestants.push(contestant);
+    //                     }else {
+    //                         losingContestants.push(contestant);
+    //                     }
+    //                 })
+    //             });
+
+    //             setWinners(winningContestants);
+    //             setLosers(losingContestants);
+
+    //         });
+    // },[])
+    
+    // return (
+    //     <div>
+    //         <h1>ContestantsPage</h1>
+    //         {losers.map(contestant => {
+    //             return <ContestantsCard key={contestant._id} contestant={contestant} />
+    //         })}
+            
+    //     </div>
+    // )
+
     return (
-        <div>
-            <h1>ContestantsPage</h1>
-        </div>
+        <>
+            <ContestantsGrid />
+        </>
     )
 }

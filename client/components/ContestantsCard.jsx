@@ -1,7 +1,8 @@
-export default function ContestantsCard () {
+export default function ContestantsCard ({contestant}) {
     return (
         <div>
-            <h1>This is the contestants card!</h1>
+            <img src={contestant.img} alt={`Picture of ${contestant.name}`} />
+            <p>{contestant.name}</p>
         </div>
     );
 }

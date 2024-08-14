@@ -1,7 +1,19 @@
-export default function Video (){
+import React from "react";
+// import ReactPlayer from "react-player/youtube"
+import getYouTbeID from "get-youtube-id";
+
+export default function Video(){
+
+    // YouTubeProps['onReady'] = (e) => {
+    //     e.target.pauseVideo();
+    // }
+
+    
+    
     return (
-        <div>
-            <h1>This is the video frame</h1>
-        </div>
+
+        <>
+            {/* <ReactPlayer url="https://www.youtube.com/watch?v=NjQJj9WMlfY"> /</ReactPlayer> */}
+        </>
     );
 }

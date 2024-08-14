@@ -19,7 +19,7 @@ function App() {
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/contestants" element={<ContestantsPage />}></Route>
         <Route path="/performances" element={< PerformancesPage />}></Route>
-        <Route path="/performances" element={<PerformancesRoundPage />}></Route>
+        <Route path="/performances/round/:num" element={<PerformancesRoundPage />}></Route>
       </Routes>
     </div>
   )

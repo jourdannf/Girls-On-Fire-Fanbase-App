@@ -13,7 +13,7 @@ export default function PerformancesPage (){
             <h1>Performances Page</h1>
             {
                 rounds.map((rd)=> {
-                    return <DirectoryCard name={rd.name} num={rd.num} />
+                    return <Link key={rd.number} to={`/performances/round/${rd.number}`}><DirectoryCard name={rd.name} num={rd.number} /></Link>
                 })
             }
         </div>
