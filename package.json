@@ -8,8 +8,8 @@
     "client": "npm run dev --prefix client",
     "server:dev": "nodemon server/index.js",
     "server:prod": "NODE_ENV=production nodemon server/index.js",
-    "start": "concurrently \"npm run server:dev\" \"npm rn client",
-    "prod": "concurrently \"npm run server:prod\" \"npm rn client",
+    "start": "concurrently \"npm run server:dev\" \"npm rn client\"",
+    "prod": "concurrently \"npm run server:prod\" \"npm rn client\"",
     "build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
