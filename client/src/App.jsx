@@ -5,7 +5,7 @@ import './App.css'
 import HomePage from '../pages/HomePage'
 import PerformancesPage from '../pages/PerformancesPage'
 import ContestantsPage from '../pages/ContestantsPage'
-import Header from '../components/header'
+import Header from '../components/Header'
 
 import {Routes, Route} from 'react-router-dom';
 import PerformancesRoundPage from '../pages/PerformancesRoundPage'

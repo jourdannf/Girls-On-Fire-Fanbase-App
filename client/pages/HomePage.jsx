@@ -1,4 +1,3 @@
-import Header from "../components/header"
 import { useState } from "react"
 import axios from "axios"
 import { CarouselCaption } from "react-bootstrap"
