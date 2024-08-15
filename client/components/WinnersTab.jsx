@@ -6,7 +6,7 @@ export default function WinnersTab ({hidden, animate, winners}) {
     //open class when it's hidden
 
     return (
-        <div id="winners-tab" className={animate ? (hidden ? "hidden" : "reveal"): ""} style={{position: "relative", border: "green solid 1px", height: "200px", display:"flex"}}>
+        <div id="winners-tab" className={animate ? (hidden ? "hidden" : "reveal"): ""} style={{position: "relative", border: "green solid 1px", height: "150px", display:"flex"}}>
             {winners.map(w => {
                 console.log(w);
                 return <ContestantsCard contestant={w}/>                

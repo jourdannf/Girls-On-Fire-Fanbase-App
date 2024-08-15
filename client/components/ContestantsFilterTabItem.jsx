@@ -16,7 +16,7 @@ export default forwardRef(function ContestantsFilterTabItem ({contestant, onClic
         
         <div onClick={onClick} id={contestant.name} ref={ref}>
             
-            <Card>
+            <Card style={{width: "100px"}}>
                 <Card.Img className="contestant-card-img" src={contestant.img ? `../src/assets/${contestant.img}` : ""} alt={`Picture of ${contestant.name}`} />
                 <Card.Title> {contestant.name}</Card.Title>
             </Card>

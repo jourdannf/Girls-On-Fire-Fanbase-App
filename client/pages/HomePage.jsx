@@ -17,7 +17,7 @@ export default function HomePage (props){
             <Container>
              <Carousel activeIndex={index} onSelect={handleSelect} controls={true}>
                 <Carousel.Item>
-                    <img className="carousel-item-img" src="../src/assets/react.svg" alt="" />
+                    <img className="carousel-item-img" src="../src/assets/group-picture.jpg" alt="" />
                     <Carousel.Caption>
                         <p>This is some placeholder text</p>
                     </Carousel.Caption>

@@ -53,7 +53,7 @@ export default function ContestantsCard ({contestant}) {
         setLiked(!liked);
         //Update state for like
     }
-    //Don't have time to style button so I'm removing it
+    //Don't have time to style like button so I'm removing it
     return (
         // <div className="contestant-card-outer">
         //     <img className="contestant-card-img" src={contestant.img ? `../src/assets/${contestant.img}` : ""} alt={`Picture of ${contestant.name}`} />
@@ -63,7 +63,7 @@ export default function ContestantsCard ({contestant}) {
         //     <p>{contestant.name}</p>
         // </div>
         <Card>
-            <Card.Img className="contestant-card-img" src={contestant.img ? `../src/assets/${contestant.img}` : ""} alt={`Picture of ${contestant.name}`} />
+            <Card.Img className="contestant-card-img" src={contestant.img ? `../src/assets/${contestant.img}` : ""} alt={`Picture of ${contestant.name}`} /> 
             <Card.Title> {contestant.name}</Card.Title>
         </Card>
     );

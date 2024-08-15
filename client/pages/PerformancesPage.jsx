@@ -26,22 +26,22 @@ export default function PerformancesPage (){
 
     return(
         <div>
-            <h1 className="text-center ">Performances Page</h1>
-            <div>
-                <Container>
+            <h1 className="text-center">Performances Page</h1>
+            
+            <Container style={{width: "100%"}}>
                 <ListGroup horizontal>
                 {
                     rounds.map((rd)=> {
                         return (
                         
-                            <ListGroup.Item action key={rd.number} as={Link} to="`/performances/round/${rd.number}`">
+                            <ListGroup.Item action key={rd.number} as={Link} to={`/performances/round/${rd.number}`}>
                                 <h3>Round {rd.number}: {rd.name}</h3>  
                             </ListGroup.Item>)
                     })                
                 }
                 </ListGroup>
-                </Container>
-            </div>
+            </Container>
+            
             
             <ContestantsFilterTab updatePerformances={updatedFilteredPerformances} />
             <VideoGrid performances={filteredPerformances} />

@@ -1,15 +1,15 @@
 import axios from "axios"
 
 const getUserByID = (id) => {
-    return axios.get(`http://localhost:3000/users/${id}`);
+    return axios.get(`https://girls-on-fire-fanbase-app.onrender.com/users/${id}`);
 }
 
 const getFavContestants = (id) => {
-    return axios.get(`http://localhost:3000/users/${id}/favorites/contestants`)
+    return axios.get(`https://girls-on-fire-fanbase-app.onrender.com/users/${id}/favorites/contestants`)
 }
 
 const toggleFavContestants = (person, id) => {
-    return axios.patch(`http://localhost:3000/users/${id}/favorites/contestants`, {
+    return axios.patch(`https://girls-on-fire-fanbase-app.onrender.com/users/${id}/favorites/contestants`, {
         contestant: person
     })
 }

@@ -8,7 +8,7 @@ export default function Video({link}){
     return (
 
         <>
-            <ReactPlayer url={link}> /</ReactPlayer>
+            <ReactPlayer style={{padding: "5px", margin: "2px"}} url={link}> /</ReactPlayer>
         </>
     );
 }

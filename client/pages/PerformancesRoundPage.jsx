@@ -21,12 +21,17 @@ export default function PerformancesRoundPage() {
 
     return (
         <div>
-            {
-            performances.map((p) => {
-                // console.log(p.link)
-                return (<Video link={p.link} />);
-            })
-            }
+
+            <h1 className="text-center"> Round {num}</h1>
+            <div className="d-flex flex-wrap" style={{width: "1300px", margin: "auto"}}>
+                {
+                performances.map((p) => {
+                    // console.log(p.link)
+                    return (<Video link={p.link} />);
+                })
+                }
+            </div>
+            
         </div>
     )
 }
