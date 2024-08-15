@@ -1,5 +1,10 @@
 #winners-tab {
-    top: -50px;
+    top: -200px;
+    z-index: 1;
+}
+
+#group-pic {
+    z-index: 2;
 }
 
 #winners-tab.hidden {
@@ -23,13 +28,13 @@
         transform: translateY(0px);
     }
     to {
-        transform: translateY(50px);
+        transform: translateY(200px);
     }
 }
 
 @keyframes slideup {
     from {
-        transform: translateY(50px);
+        transform: translateY(200px);
     }
     to {
         transform: translateY(0px);
@@ -38,18 +43,18 @@
 
 @keyframes expandheight {
     from {
-        height: 100px;
+        height: 400px;
     }
     to {
-        height: 150px;
+        height: 600px;
     }
 }
 
 @keyframes shrinkheight {
     from {
-        height: 150px;
+        height: 600px;
     }
     to {
-        height: 100px;
+        height: 400px;
     }
 }

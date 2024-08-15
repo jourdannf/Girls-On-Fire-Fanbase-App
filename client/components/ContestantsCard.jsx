@@ -1,20 +1,70 @@
+import Card from "react-bootstrap/Card"
+
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 import "../src/App.css"
+import funcs from "../utils/users"
+
 
 export default function ContestantsCard ({contestant}) {
+    const [clicked, setClicked] = useState({});
+    const [liked, setLiked] = useState(false);
+    const id = useParams();
+    
+    useEffect(() => {
+        if (Object.keys(clicked).length == 0){
+            return;
+        }
+
+        //Patch request not working, but this is supposed to add or remove a contestants from likes if they are liked on the screen
+
+        // const person = new Map();
+
+        // person.set("img", contestant.img);
+        // person.set("name", contestant.name);
+
+        // if(liked){
+        //     funcs.toggleFavContestants(person, id)
+        //         .then(p => {
+        //             console.log(`${p} has been added to favorites.`)
+        //         })
+        //         .catch(e => {
+        //             console.log(e)
+        //         });
+        // }else if (!liked) {
+        //     funcs.toggleFavContestants(person, id)
+        //         .then(p => {
+        //             console.log(`${p} has been removed from favorites.`)
+        //         })
+        //         .catch(e => {
+        //             console.log(e)
+        //         });
+        //     setClicked({});
+        // }
+    },[liked]);
+
     function handleClick(e) {
+        console.log(contestant);
         //Get the parent
         //Find the contestant
         //Add contestant to favorites
+        setClicked(contestant);
+        setLiked(!liked);
         //Update state for like
     }
-    
+    //Don't have time to style button so I'm removing it
     return (
-        <div className="contestant-card-outer">
-            <img className="contestant-card-img" src={contestant.img ? `../src/assets/${contestant.img}` : ""} alt={`Picture of ${contestant.name}`} />
-            <button className="like-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill " viewBox="0 0 16 16" onClick={handleClick}>
-  <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
-</svg></button>
-            <p>{contestant.name}</p>
-        </div>
+        // <div className="contestant-card-outer">
+        //     <img className="contestant-card-img" src={contestant.img ? `../src/assets/${contestant.img}` : ""} alt={`Picture of ${contestant.name}`} />
+        //     {/* <button className="like-button" onClick={handleClick} >
+        //         <i className="bi bi-heart-fill"></i>
+        //     </button> */}
+        //     <p>{contestant.name}</p>
+        // </div>
+        <Card>
+            <Card.Img className="contestant-card-img" src={contestant.img ? `../src/assets/${contestant.img}` : ""} alt={`Picture of ${contestant.name}`} />
+            <Card.Title> {contestant.name}</Card.Title>
+        </Card>
     );
 }

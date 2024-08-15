@@ -2,6 +2,7 @@ import { useState } from "react"
 import axios from "axios"
 import { CarouselCaption } from "react-bootstrap"
 import Carousel from "react-bootstrap/Carousel"
+import Container from "react-bootstrap/Container"
 import "../src/App.css"
 
 export default function HomePage (props){
@@ -12,7 +13,8 @@ export default function HomePage (props){
     };
 
     return (
-        <div>
+        <>
+            <Container>
              <Carousel activeIndex={index} onSelect={handleSelect} controls={true}>
                 <Carousel.Item>
                     <img className="carousel-item-img" src="../src/assets/react.svg" alt="" />
@@ -27,6 +29,7 @@ export default function HomePage (props){
                     </Carousel.Caption>
                 </Carousel.Item>
              </Carousel>
-        </div>
+             </Container>
+        </>
     )
 }

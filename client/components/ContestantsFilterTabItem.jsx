@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, forwardRef } from "react"
+import Card from "react-bootstrap/Card"
 
 export default forwardRef(function ContestantsFilterTabItem ({contestant, onClick}, ref) {
     // const [clicked, setClicked] = useState([]);
@@ -9,12 +10,19 @@ export default forwardRef(function ContestantsFilterTabItem ({contestant, onClic
 
     // }, [clicked])
     
+
+    //Attempting to use ref to the get the information about the item clicked so that I could filter the performances, but didn't have time to fully imnplement useRef
     return (
+        
         <div onClick={onClick} id={contestant.name} ref={ref}>
-            <div className="rounded-div">
-                <img className="filter-tab-item" src={contestant.img ? `../src/assets/${contestant.img}` : ""} alt={`Picture of ${contestant.name}`} />
-            </div>
-            <p>{contestant.name}</p>
+            
+            <Card>
+                <Card.Img className="contestant-card-img" src={contestant.img ? `../src/assets/${contestant.img}` : ""} alt={`Picture of ${contestant.name}`} />
+                <Card.Title> {contestant.name}</Card.Title>
+            </Card>
+        
         </div>
+
+        
     )
 })

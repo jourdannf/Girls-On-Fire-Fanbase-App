@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
-
-
+// import Contestant from "./contestants"
 
 const userSchema = new mongoose.Schema({
     nickname: {

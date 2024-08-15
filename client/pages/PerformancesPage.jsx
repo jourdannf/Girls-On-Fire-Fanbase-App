@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
 import { Link} from "react-router-dom";
-import DirectoryCard from "../components/DirectoryCard";
+import Container from "react-bootstrap/Container"
+import { ListGroup } from "react-bootstrap";
 import VideoGrid from "../components/VideoGrid.jsx";
 import ContestantsFilterTab from "../components/ContestantsFilterTab"
 
@@ -25,13 +26,21 @@ export default function PerformancesPage (){
 
     return(
         <div>
-            <h1>Performances Page</h1>
+            <h1 className="text-center ">Performances Page</h1>
             <div>
+                <Container>
+                <ListGroup horizontal>
                 {
                     rounds.map((rd)=> {
-                        return <Link key={rd.number} to={`/performances/round/${rd.number}`}><DirectoryCard name={rd.name} num={rd.number} /></Link>
+                        return (
+                        
+                            <ListGroup.Item action key={rd.number} as={Link} to="`/performances/round/${rd.number}`">
+                                <h3>Round {rd.number}: {rd.name}</h3>  
+                            </ListGroup.Item>)
                     })                
                 }
+                </ListGroup>
+                </Container>
             </div>
             
             <ContestantsFilterTab updatePerformances={updatedFilteredPerformances} />

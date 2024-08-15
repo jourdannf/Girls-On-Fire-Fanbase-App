@@ -16,8 +16,9 @@
 }
 
 .contestant-card-img {
-    height: auto;
-    width: 100%
+    width: 100px;
+    height: 100px;;
+    overflow: hidden;
 }
 
 .like-button {
@@ -25,8 +26,13 @@
     background: transparent;
     border: none;
     color: grey;
+    outline: none;
 }
 
 .like-button:hover {
+    color: red;
+}
+
+.clicked-button {
     color: red;
 }

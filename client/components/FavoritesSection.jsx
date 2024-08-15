@@ -13,7 +13,9 @@ export default function FavoritesSection ({contestants}) {
             {
                 
                 contestants.map(contestant => {
-                    return <ContestantCard contestant={contestant} />
+                    //Won't work because I couldn't get patch to work, using the string inside my database for presentation purposes right now
+                    // return <ContestantCard contestant={contestant} />
+                    return contestant;
                 })
             }
         </div>

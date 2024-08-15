@@ -4,6 +4,7 @@ import ContestantsCard from "./ContestantsCard";
 import getContestants from "../utils/contestants";
 import funcs from "../utils/performances"
 import ContestantsFilterTabItem from "./ContestantsFilterTabItem";
+import Container from "react-bootstrap/Container"
 import "../src/App.css"
 
 
@@ -44,20 +45,21 @@ export default function ContestantsFilterTab ({updatePerformances}) {
         //Updated Clicked will trigger useEffect which will updatePerformances to new filter
         console.log(tabItemRef.current);
     }
+    //Didn't have time to implement useRef
+    // function getMap(node) {
 
-    function getMap(node) {
+    // }
 
-    }
+    // function setMap(node){
+    //     const map = getMap();
 
-    function setMap(node){
-        const map = getMap();
-
-        if(node) {
-            map.set(contestant.name, node)
-        }
-    }
+    //     if(node) {
+    //         map.set(contestant.name, node)
+    //     }
+    // }
     
     return (
+        <Container>
         <div style={{display: "flex"}}>
             {contestants.map(contestant => {
                 return (
@@ -67,5 +69,6 @@ export default function ContestantsFilterTab ({updatePerformances}) {
             })}
             
         </div>
+        </Container>
     );
 }

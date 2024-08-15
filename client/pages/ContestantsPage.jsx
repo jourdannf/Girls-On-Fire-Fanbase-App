@@ -73,8 +73,8 @@ export default function ContestantsPage () {
         
         <>
             <div id="outer" className= {animate ? (hidden ? "hidden" : "reveal") : ""} style={{height: "100px"}}>
-                <img src="../src/assets/react.svg" alt="Picture of winning group" style={{height: "100px", border: "blue 1px solid"}} onClick={handleClick} />
-                <WinnersTab hidden={hidden} animate={animate} />
+                <img id="group-pic" src="../src/assets/group-picture.jpg" alt="Picture of winning group" style={{height: "400px", border: "blue 1px solid"}} onClick={handleClick} />
+                <WinnersTab hidden={hidden} animate={animate} winners={winners} />
             </div>
             
             <br />
