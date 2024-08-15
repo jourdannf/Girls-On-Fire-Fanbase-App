@@ -21,6 +21,8 @@ router
 
         const result = await Performance.find(query);
 
+        console.log(result);
+
         if (!result) res.status(404).send("Resource Not Found");
         else res.status(200).send(result);
     });

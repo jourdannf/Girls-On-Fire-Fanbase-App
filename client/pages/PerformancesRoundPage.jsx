@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 
-import getPerformancesByRd from "../utils/performances"
+import funcs from "../utils/performances"
 
 import Video from "../components/Video"
 
@@ -11,7 +11,7 @@ export default function PerformancesRoundPage() {
 
     //Gets all the Performances for the specific round
     useEffect(() => {
-        getPerformancesByRd(num)
+        funcs.getPerformancesByRd(num)
             .then(stages => {
                 return setPerformances(stages.data)
             })
@@ -23,6 +23,7 @@ export default function PerformancesRoundPage() {
         <div>
             {
             performances.map((p) => {
+                // console.log(p.link)
                 return (<Video link={p.link} />);
             })
             }

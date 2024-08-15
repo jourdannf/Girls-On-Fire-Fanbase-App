@@ -16,6 +16,7 @@ export default function ContestantsPage () {
     useEffect(()=> {
         getContestants()
             .then(contestants => {
+                console.log(contestants);
                 const data = contestants.data;
                 const winningContestants = [];
                 const losingContestants = [];

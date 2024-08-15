@@ -1,7 +1,11 @@
-export default function DirectoryCard () {
+export default function DirectoryCard ({name, num}) {
     return (
         <div>
-            <h1>This is the directory card</h1>
+            <h1>
+                Round {num}: {name}
+            </h1>
+
+            
         </div>
     );
 }
