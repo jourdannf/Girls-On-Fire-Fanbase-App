@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link} from "react-router-dom";
 import DirectoryCard from "../components/DirectoryCard";
 import VideoGrid from "../components/VideoGrid.jsx";
+import ContestantsFilterTab from "../components/ContestantsFilterTab"
 
 import rounds from "../data/performances.js"
 import funcs from "../utils/performances.js"
@@ -10,13 +11,17 @@ import funcs from "../utils/performances.js"
 export default function PerformancesPage (){
     // [rounds, setRounds] = useState(9);
     const [performances, setPerformances] = useState([]);
+    const [filteredPerformances, setFilteredPerformances] = useState([]);
 
     useEffect(() => {
         funcs.getPerformances()
             .then(results => {
                 setPerformances(results.data);
+                setFilteredPerformances(results.data);
             })
     }, []);
+
+    const updatedFilteredPerformances = performances => setFilteredPerformances(performances);
 
     return(
         <div>
@@ -29,7 +34,8 @@ export default function PerformancesPage (){
                 }
             </div>
             
-            <VideoGrid performances={performances} />
+            <ContestantsFilterTab updatePerformances={updatedFilteredPerformances} />
+            <VideoGrid performances={filteredPerformances} />
             
             
         </div>

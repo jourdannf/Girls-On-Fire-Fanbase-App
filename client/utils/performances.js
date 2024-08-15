@@ -8,4 +8,15 @@ const getPerformances = () => {
     return axios.get("http://localhost:3000/performances")
 }
 
-export default {getPerformancesByRd, getPerformances};
+const getFilteredPerformances = (paramsArr) => {
+    return axios.get("http://localhost:3000/performances", {
+        params: {
+            contestant: paramsArr
+        },
+        paramsSerializer: {
+            indexes: null
+        }
+    })
+}
+
+export default {getPerformancesByRd, getPerformances, getFilteredPerformances};

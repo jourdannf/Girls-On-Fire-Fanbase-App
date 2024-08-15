@@ -8,3 +8,25 @@
     height: auto;
     width: 100%;
 }
+
+.contestant-card-outer {
+    height: 300px;
+    width: 800px;
+    border: 1px purple solid;
+}
+
+.contestant-card-img {
+    height: auto;
+    width: 100%
+}
+
+.like-button {
+    position: absolute;
+    background: transparent;
+    border: none;
+    color: grey;
+}
+
+.like-button:hover {
+    color: red;
+}
