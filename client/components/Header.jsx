@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 
 import NavBar from "./NavBar";
-import getUserByID from "../utils/users";
+import funcs from "../utils/users";
 
 export default function Header ({id}) {
     const [pfpLink, setLink] = useState("");
     const [nickname, setNickname] = useState("");
 
     useEffect(()=> {
-        getUserByID(id)
+        funcs.getUserByID(id)
             .then(user => {
-                console.log(user.data)
                 setNickname(user.data.nickname);
             })
     }, [id])

@@ -4,4 +4,8 @@ const getUserByID = (id) => {
     return axios.get(`http://localhost:3000/users/${id}`);
 }
 
-export default getUserByID;
+const getFavContestants = (id) => {
+    return axios.get(`http://localhost:3000/users/${id}/favorites/contestants`)
+}
+
+export default {getUserByID, getFavContestants};

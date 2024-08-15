@@ -87,9 +87,7 @@ router
         const id = req.params.id;
         const u = await User.findById(id);
 
-        //Need to figure out how to send just favorite contestants
-
-        res.send(u.favorites);
+        res.send(u.favorites.get("contestants"));
     })
     .patch(async (req, res) => {
         const id = req.params.id;
