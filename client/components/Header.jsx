@@ -5,7 +5,7 @@ export default function Header (props) {
         <div style={{display: "flex"}}>
             <img src="" alt="" />
             <NavBar />
-            <img src={props.pfpLink} alt={`Profile picture of ${props.nickname}`} />
+            <a href="/user/:id"><img src={props.pfpLink} alt={`Profile picture of ${props.nickname}`} /></a>
         </div>
     );
 }
